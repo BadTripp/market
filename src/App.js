@@ -2,7 +2,7 @@ import Cart from "./cart/Cart"
 import './App.css';
 import Navbar from './navbar/Navbar';
 import Products from './product/Products';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function App(props) {
   const [searchText,setSearchText] = useState("");
@@ -30,7 +30,9 @@ const onRemove=(cart)=>{
   let prodUpdated=cartProducts.filter((prod)=>prod.id != cart.id)
   setCartProducts(prodUpdated);
 }
-
+useEffect(() => {
+  document.title = "FakeMarket"
+}, [])
 
   return (
     <div className="App">
