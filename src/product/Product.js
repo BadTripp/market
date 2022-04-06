@@ -1,5 +1,8 @@
 function Product(props){
 
+    const onAddCart =()=>{
+        props.onAddCart();
+    }
 
     return(
         <div class="product-card">
@@ -11,7 +14,7 @@ function Product(props){
           <h2 class="product-brand">{props.product.brand}</h2>
           <p class="product-short-des">{props.product.desc}</p>
           <span class="price">{props.product.price}</span>
-          
+          <button onClick={onAddCart}>Add to Cart</button>
         </div>
       </div>
     );

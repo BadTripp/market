@@ -12,17 +12,17 @@ function Navbar() {
     }
   return (
     
-      <nav class="navbar">
-        <div class="nav">
+      <nav className="navbar">
+        <div className="nav">
           <img src={logo} class="brand-logo" alt="" />
-          <div class="nav-items">
+          <div className="nav-items">
             <div class="search">
               <input
                 type="text"
-                class="search-box"
+                className="search-box"
                 placeholder="search brand, product"
               />
-              <button class="search-btn">search</button>
+              <button className="search-btn">search</button>
             </div>
             <a >
               <img src={user} alt="" />
