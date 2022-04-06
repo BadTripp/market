@@ -26,6 +26,7 @@ const onSearch =(text)=>{
     setSearchText(text);
 }
 const onRemove=(cart)=>{
+  console.log(cart)
   let prodUpdated=cartProducts.filter((prod)=>prod.id != cart.id)
   setCartProducts(prodUpdated);
 }

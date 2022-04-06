@@ -3,11 +3,12 @@ import Cart from "../cart/Cart"
 import user from "../img/user.png";
 import cart from "../img/cart.png";
 import logo from "../img/logo.jpg";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 
 function Navbar(props) {
     const [showCart,setShowCart]=useState(false);
+    const [nProdotti,setNProdotti]= useState(0);
     function onCart (event){
         event.preventDefault();
         (showCart) ? setShowCart(false):setShowCart(true);
@@ -15,6 +16,14 @@ function Navbar(props) {
     const onSearch =(event)=>{
         props.onSearch(event.target.value);
     }
+    const onRemove=(cart)=>{
+        console.log(cart)
+        props.onRemove(cart);
+   }
+   
+   useEffect(() => {
+    setNProdotti(props.cart.length)
+}, [props.cart]);
   return (
     
       <nav className="navbar">
@@ -34,8 +43,9 @@ function Navbar(props) {
             </a>
             <a >
               <img onClick={onCart} src={cart} alt="" />
-              {(showCart) && <Cart cart={props.cart}></Cart>}
+              {(showCart) && <Cart onRemove={onRemove} cart={props.cart}></Cart>}
             </a>
+            <a>{nProdotti}</a>
           </div>
         </div>
       </nav>

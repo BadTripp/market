@@ -3,10 +3,12 @@ import "./cart.css";
 function Cart(props) {
     let totale=0;
    totale=props.cart.reduce((accum,cartsuc)=> accum + cartsuc.price,0)
-
+    
    const onRemove=(cart)=>{
+    console.log(cart)
         props.onRemove(cart);
    }
+   
   return (
     <>
       <h2>Card</h2>
@@ -18,7 +20,7 @@ function Cart(props) {
               <b>Prodotto:{cartp.brand}</b>
             </h4>
             <p>Prezzo:{cartp.price}</p>
-            <button onClick={onRemove(props.cartp)}> -rimuovi</button>
+            <button onClick={()=>onRemove(cartp)}> -rimuovi</button>
             </div>
             
             
