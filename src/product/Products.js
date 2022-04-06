@@ -31,8 +31,10 @@ function Products(props) {
     img:"https://www.mobilclick.it/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/_/_/sedia_savoy_impagliata_in_legno_tinta_noce_temporary_outlet_sedie_42b-rist_0.jpg"
   },
 ]
-const onAddCart =()=>{
-  props.onAddCart(props.product);
+const onAddCart =(product)=>{
+  console.log(product)
+  props.onAddCart(product);
+  
 }
 
   return (

@@ -16,7 +16,7 @@ function App(props) {
 
 
 const onAddCart =(product)=>{
-  console.log("arrivato"+product)
+  
 }
 
 

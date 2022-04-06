@@ -1,7 +1,8 @@
 function Product(props){
 
     const onAddCart =()=>{
-        props.onAddCart();
+        console.log(props.product)
+        props.onAddCart(props.product);
     }
 
     return(
