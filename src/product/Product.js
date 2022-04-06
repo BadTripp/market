@@ -1,3 +1,5 @@
+import "./product.css"
+
 function Product(props){
 
     const onAddCart =()=>{
@@ -6,16 +8,16 @@ function Product(props){
     }
 
     return(
-        <div class="product-card">
-        <div class="product-image">
-          <span class="discount-tag">50% off</span>
+        <div className="product-card">
+        <div className="product-image">
+          <span className="discount-tag">50% off</span>
           <img src={props.product.img} class="product-thumb" alt="" />
         </div>
-        <div class="product-info">
-          <h2 class="product-brand">{props.product.brand}</h2>
-          <p class="product-short-des">{props.product.desc}</p>
-          <span class="price">{props.product.price}</span>
-          <button onClick={onAddCart}>Add to Cart</button>
+        <div className="product-info">
+          <h2 className="product-brand">{props.product.brand}</h2>
+          <p className="product-short-des">{props.product.desc}</p>
+          <span className="price">{props.product.price} €</span>
+          <button className="card-btn" onClick={onAddCart}>+Add</button>
         </div>
       </div>
     );
