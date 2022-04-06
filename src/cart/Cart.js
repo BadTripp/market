@@ -1,20 +1,21 @@
 import "./cart.css";
 
-function Cart() {
+function Cart(props) {
     
   return (
     <>
       <h2>Card</h2>
-
-      <div class="card">
-      
-        <div class="container">
-          <h4>
-            <b>John Doe</b>
-          </h4>
-          <p>Architect Engineer</p>
+      {props.cart.map((cartp) => (
+        <div class="card">
+          <div class="container">
+            <h4>
+              <b>{cartp.brand}</b>
+            </h4>
+            <p>{cartp.price}</p>
+          </div>
         </div>
-      </div>
+      ))}
+      
     </>
   );
 }

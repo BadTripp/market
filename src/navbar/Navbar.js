@@ -5,10 +5,13 @@ import cart from "../img/cart.png";
 import logo from "../img/logo.jpg";
 import { useState } from "react";
 
-function Navbar() {
+
+function Navbar(props) {
     const [showCart,setShowCart]=useState(false);
-    function onCart (){
-        setShowCart(true);
+    console.log(props.cart)
+    function onCart (event){
+        event.preventDefault();
+        (showCart) ? setShowCart(false):setShowCart(true);
     }
   return (
     
@@ -29,7 +32,7 @@ function Navbar() {
             </a>
             <a >
               <img onClick={onCart} src={cart} alt="" />
-              {(showCart) && <Cart></Cart>}
+              {(showCart) && <Cart cart={props.cart}></Cart>}
             </a>
           </div>
         </div>

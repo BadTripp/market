@@ -16,13 +16,16 @@ function App(props) {
 
 
 const onAddCart =(product)=>{
-  
+  setCartProducts(()=>[
+    ...cartProducts,
+    product
+  ]);
 }
 
 
   return (
     <div className="App">
-     <Navbar></Navbar>
+     <Navbar cart={cartProducts}></Navbar>
      <Products onAddCart={onAddCart}></Products>
      
     </div>
