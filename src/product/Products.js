@@ -23,14 +23,14 @@ function Products(props) {
     {
       id: 2,
       brand: "fiasco de vino",
-      desc: "Vino bono della casa mia",
+      desc: "vino bono della casa mia",
       price: 100,
       img: "https://www.castellidelgrevepesa.it/wp-content/uploads/2018/03/cagr-chcl-fiasco.jpg",
     },
     {
       id: 3,
       brand: "sedia de legno",
-      desc: "Perfetta pe controllare la via",
+      desc: "perfetta pe controllare la via",
       price: 100,
       img: "https://www.mobilclick.it/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/_/_/sedia_savoy_impagliata_in_legno_tinta_noce_temporary_outlet_sedie_42b-rist_0.jpg",
     },
@@ -48,7 +48,7 @@ function Products(props) {
       console.log(clone);
     } else {
       let newproducts = clone.filter((prod) =>
-        prod.brand.includes(props.searchText)
+        prod.brand.includes(props.searchText) || prod.desc.includes(props.searchText)
       );
       setProducts(newproducts);
       
