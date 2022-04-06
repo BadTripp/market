@@ -11,7 +11,7 @@ function Cart(props) {
    
   return (
     <>
-      <h2>Card</h2>
+      <h2>Cart</h2>
       <div className="card">
       {props.cart.map((cartp) => (
         
