@@ -1,7 +1,21 @@
-function Cart (){
+import "./cart.css";
 
-    return(
-        <></>
-    );
+function Cart() {
+    
+  return (
+    <>
+      <h2>Card</h2>
+
+      <div class="card">
+      
+        <div class="container">
+          <h4>
+            <b>John Doe</b>
+          </h4>
+          <p>Architect Engineer</p>
+        </div>
+      </div>
+    </>
+  );
 }
 export default Cart;
