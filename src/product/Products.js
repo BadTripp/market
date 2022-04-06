@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Product from "./Product";
 import "./product.css"
+
+
 function Products(props) {
   //-brand -desc -price string.includes(substring)
+  
   const [products,setProducts]= useState([{
     id:0,
     brand:"nike srapid",
@@ -32,16 +35,23 @@ function Products(props) {
     img:"https://www.mobilclick.it/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/_/_/sedia_savoy_impagliata_in_legno_tinta_noce_temporary_outlet_sedie_42b-rist_0.jpg"
   },
 ]);
+const [clone,setClone] = useState(products);
+
 const onAddCart =(product)=>{
   console.log(product)
   props.onAddCart(product);
   
 }
-const onSearch =(product)=>{
+
+  useEffect(()=>{
+    console.log(props.searchText.length)
+    if(props.searchText.length === 0){setProducts(clone) ;console.log(clone)}else
+    {let newproducts=clone.filter(prod => prod.brand.includes(props.searchText))
+      setProducts(newproducts); console.log(newproducts)}
+  },[props.searchText])
   
-  props.onAddCart(product);
   
-}
+
 
   return (
     <div class="product-container">
