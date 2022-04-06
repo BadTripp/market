@@ -5,7 +5,7 @@ import Products from './product/Products';
 import { useState } from "react";
 
 function App(props) {
-
+  const [searchText,setSearchText] = useState("");
   const [cartProducts,setCartProducts] = useState([{
     brand:"nike srapid",
     desc:"Scarpe velocissime",
@@ -21,12 +21,16 @@ const onAddCart =(product)=>{
     product
   ]);
 }
+const onSearch =(text)=>{
+  console.log(text)
+    setSearchText(text);
+}
 
 
   return (
     <div className="App">
-     <Navbar cart={cartProducts}></Navbar>
-     <Products onAddCart={onAddCart}></Products>
+     <Navbar  onSearch={onSearch} cart={cartProducts}></Navbar>
+     <Products searchText={searchText}  onAddCart={onAddCart}></Products>
      
     </div>
   );

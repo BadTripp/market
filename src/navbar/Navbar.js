@@ -8,10 +8,12 @@ import { useState } from "react";
 
 function Navbar(props) {
     const [showCart,setShowCart]=useState(false);
-    console.log(props.cart)
     function onCart (event){
         event.preventDefault();
         (showCart) ? setShowCart(false):setShowCart(true);
+    }
+    const onSearch =(event)=>{
+        props.onSearch(event.target.value);
     }
   return (
     
@@ -20,7 +22,7 @@ function Navbar(props) {
           <img src={logo} class="brand-logo" alt="" />
           <div className="nav-items">
             <div class="search">
-              <input
+              <input onChange={onSearch}
                 type="text"
                 className="search-box"
                 placeholder="search brand, product"
