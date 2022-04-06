@@ -25,11 +25,15 @@ const onSearch =(text)=>{
   console.log(text)
     setSearchText(text);
 }
+const onRemove=(cart)=>{
+  let prodUpdated=cartProducts.filter((prod)=>prod.id != cart.id)
+  setCartProducts(prodUpdated);
+}
 
 
   return (
     <div className="App">
-     <Navbar  onSearch={onSearch} cart={cartProducts}></Navbar>
+     <Navbar onRemove={onRemove} onSearch={onSearch} cart={cartProducts}></Navbar>
      <Products searchText={searchText}  onAddCart={onAddCart}></Products>
      
     </div>
