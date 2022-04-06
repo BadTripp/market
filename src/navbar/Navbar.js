@@ -36,7 +36,7 @@ function Navbar(props) {
                 className="search-box"
                 placeholder="cerca un prodotto,o quello che te pare"
               />
-              <button className="search-btn">search</button>
+              <p className="search-btn">search</p>
             </div>
             <a >
               <img src={user} alt="" />

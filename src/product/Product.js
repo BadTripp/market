@@ -10,7 +10,7 @@ function Product(props){
     return(
         <div className="product-card">
         <div className="product-image">
-          <span className="discount-tag">50% off</span>
+          <span className="discount-tag">50% de sconto</span>
           <img src={props.product.img} class="product-thumb" alt="" />
         </div>
         <div className="product-info">
