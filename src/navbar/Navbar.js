@@ -22,7 +22,7 @@ function Navbar(props) {
    }
    
    useEffect(() => {
-    setNProdotti(props.cart.length)
+    (props.cart.length==0)?setNProdotti("") :setNProdotti(props.cart.length);
 }, [props.cart]);
   return (
     
