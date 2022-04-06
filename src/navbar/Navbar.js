@@ -34,7 +34,7 @@ function Navbar(props) {
               <input onChange={onSearch}
                 type="text"
                 className="search-box"
-                placeholder="search brand, product"
+                placeholder="cerca un prodotto,o quello che te pare"
               />
               <button className="search-btn">search</button>
             </div>
