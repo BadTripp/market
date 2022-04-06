@@ -15,7 +15,7 @@ function Products(props) {
     },
     {
       id: 1,
-      brand: "Adidas 3200",
+      brand: "adidas 3200",
       desc: "scarpe pe salti enormi",
       price: 1000,
       img: "https://img01.ztat.net/article/spp-media-p1/53870a2a8cbe3f3b85938cf03050432b/339f02edbc4b4a1bb319dcd522a9c711.jpg",
